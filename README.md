@@ -9,4 +9,4 @@ This docker image contains only the allure command line tool, especially useful
 if you otherwise aren't using Java in your developemnt process. Entry point is
 the `allure` tool itself, so you can run it like this:
 
-    docker run -ti --rm -v $PWD:/work tobix/allure-cli serve report/dir
+    docker run --rm -v $PWD:/work tobix/allure-cli serve report/dir
