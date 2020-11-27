@@ -14,7 +14,7 @@ LABEL \
 
 COPY bintray.gpg /tmp/
 
-ARG ALLURE_VERSION=2.13.6
+ARG ALLURE_VERSION=2.13.7
 ARG REPO_BASE=https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/
 
 RUN set -x && tar=allure-commandline-$ALLURE_VERSION.tgz \
