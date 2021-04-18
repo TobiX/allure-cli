@@ -1,7 +1,7 @@
 # Allure commandline Docker Image
 
 ![License](https://img.shields.io/github/license/Dosage-Bot/allure-cli)
-![Maintenance](https://img.shields.io/maintenance/yes/2020)
+![Maintenance](https://img.shields.io/maintenance/yes/2021)
 ![Docker Automated build](https://img.shields.io/docker/automated/tobix/allure-cli)
 ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/tobix/allure-cli/latest)
 
