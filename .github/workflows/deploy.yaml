@@ -20,9 +20,16 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
 
+      - name: Set Build Timestamp
+        id: build-timestamp
+        run: echo "::set-output name=date::$(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+
       - name: Build and push
         uses: docker/build-push-action@v2
         with:
           push: true
           platforms: linux/amd64,linux/arm/v7,linux/arm64/v8,linux/ppc64le,linux/s390x
           tags: tobix/allure-cli:latest
+          build-args: |
+            VCS_REF=${{ github.sha }}
+            BUILD_DATE=${{ steps.build-timestamp.outputs.date }}
