@@ -2,7 +2,7 @@
 
 ![License](https://img.shields.io/github/license/Dosage-Bot/allure-cli)
 ![Maintenance](https://img.shields.io/maintenance/yes/2021)
-![Docker Automated build](https://img.shields.io/docker/automated/tobix/allure-cli)
+[![Docker image](https://github.com/Dosage-Bot/allure-cli/actions/workflows/deploy.yaml/badge.svg)](https://github.com/Dosage-Bot/allure-cli/actions/workflows/deploy.yaml)
 ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/tobix/allure-cli/latest)
 
 This docker image contains only the allure command line tool, especially useful
