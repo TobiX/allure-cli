@@ -1,17 +1,6 @@
 FROM adoptopenjdk:11-jre-hotspot
 MAINTAINER Tobias Gruetzmacher "tobias-docker@23.gs"
 
-ARG BUILD_DATE
-ARG VCS_REF
-
-LABEL \
-  org.label-schema.build-date=$BUILD_DATE \
-  org.label-schema.license="MIT" \
-  org.label-schema.name="Docker Allure commandline" \
-  org.label-schema.url="https://docs.qameta.io/allure/" \
-  org.label-schema.vcs-ref=$VCS_REF \
-  org.label-schema.vcs-url="https://github.com/Dosage-Bot/allure-cli"
-
 COPY bintray.gpg /tmp/
 
 # renovate: datasource=maven depName=io.qameta.allure:allure-commandline
