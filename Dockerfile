@@ -14,6 +14,7 @@ LABEL \
 
 COPY bintray.gpg /tmp/
 
+# renovate: datasource=maven depName=io.qameta.allure:allure-commandline
 ARG ALLURE_VERSION=2.13.9
 ARG REPO_BASE=https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/
 
