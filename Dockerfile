@@ -1,4 +1,4 @@
-FROM adoptopenjdk:11-jre-hotspot
+FROM adoptopenjdk:16-jre-hotspot
 MAINTAINER Tobias Gruetzmacher "tobias-docker@23.gs"
 
 # renovate: datasource=maven depName=io.qameta.allure:allure-commandline
