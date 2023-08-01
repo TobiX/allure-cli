@@ -1,8 +1,12 @@
+---
 name: Docker image
 on:
   push:
     branches:
       - main
+
+permissions:
+  contents: read
 
 jobs:
   build:
