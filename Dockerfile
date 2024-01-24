@@ -1,4 +1,4 @@
-FROM eclipse-temurin:17.0.9_9-jre
+FROM eclipse-temurin:17.0.10_7-jre
 MAINTAINER Tobias Gruetzmacher "tobias-docker@23.gs"
 
 # renovate: datasource=maven depName=io.qameta.allure:allure-commandline
