@@ -1,7 +1,7 @@
 # Allure commandline Docker Image
 
 ![License](https://img.shields.io/github/license/TobiX/allure-cli)
-![Maintenance](https://img.shields.io/maintenance/yes/2023)
+![Maintenance](https://img.shields.io/maintenance/yes/2024)
 [![Docker image](https://github.com/TobiX/allure-cli/actions/workflows/deploy.yaml/badge.svg)](https://github.com/TobiX/allure-cli/actions/workflows/deploy.yaml)
 ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/tobix/allure-cli/latest)
 
