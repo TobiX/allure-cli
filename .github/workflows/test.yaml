@@ -11,5 +11,19 @@ jobs:
     name: Build Docker image
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11  # v4
+
+      - name: Read container architectures
+        id: env
+        run: cat .github/env >> $GITHUB_OUTPUT
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
       - name: Build image
         uses: docker/build-push-action@v5
+        with:
+          platforms: ${{ steps.env.outputs.archs }}
