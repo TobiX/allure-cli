@@ -2,7 +2,7 @@ FROM eclipse-temurin:17.0.11_9-jre
 MAINTAINER Tobias Gruetzmacher "tobias-docker@23.gs"
 
 # renovate: datasource=maven depName=io.qameta.allure:allure-commandline
-ARG ALLURE_VERSION=2.29.0
+ARG ALLURE_VERSION=2.30.0
 ARG REPO_BASE=https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/
 
 RUN set -x && tar=allure-commandline-$ALLURE_VERSION.tgz \
