@@ -5,21 +5,22 @@ on:
     branches:
       - main
 
-permissions:
-  contents: read
-
 jobs:
   build:
     name: Build and push Docker image
     runs-on: ubuntu-latest
+    permissions:
+      attestations: write
+      contents: read
+      id-token: write
+    env:
+      IMAGE_NAME: tobix/allure-cli
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
-
-      - name: Install Cosign
-        uses: sigstore/cosign-installer@v3.6.0
 
       - name: Read container architectures
         id: env
@@ -35,7 +36,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: tobix/allure-cli
+          images: ${{ env.IMAGE_NAME }}
           tags: |
             type=raw,value=latest
 
@@ -53,13 +54,10 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
-      - name: Sign pushed images
-        env:
-          DIGEST: ${{ steps.build-and-push.outputs.digest }}
-          TAGS: ${{ steps.meta.outputs.tags }}
-        run: |
-          images=""
-          for tag in ${TAGS}; do
-            images+="${tag}@${DIGEST} "
-          done
-          cosign sign --yes ${images}
+      - name: Attest
+        uses: actions/attest-build-provenance@v1
+        id: attest
+        with:
+          subject-name: index.docker.io/${{ env.IMAGE_NAME }}
+          subject-digest: ${{ steps.build-and-push.outputs.digest }}
+          push-to-registry: true
