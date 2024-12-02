@@ -1,4 +1,4 @@
-FROM eclipse-temurin:17.0.12_7-jre
+FROM eclipse-temurin:21.0.5_11-jre
 LABEL org.opencontainers.image.authors="Tobias Gruetzmacher <tobias-docker@23.gs>"
 
 # renovate: datasource=maven depName=io.qameta.allure:allure-commandline
