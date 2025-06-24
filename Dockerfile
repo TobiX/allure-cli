@@ -2,7 +2,7 @@ FROM eclipse-temurin:17.0.15_6-jre
 LABEL org.opencontainers.image.authors="Tobias Gruetzmacher <tobias-docker@23.gs>"
 
 # renovate: datasource=maven depName=io.qameta.allure:allure-commandline
-ARG ALLURE_VERSION=2.34.0
+ARG ALLURE_VERSION=2.34.1
 ARG REPO_BASE=https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/
 
 RUN set -x && tar=allure-commandline-$ALLURE_VERSION.tgz \
