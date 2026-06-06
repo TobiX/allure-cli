@@ -1,0 +1,9 @@
+FROM docker.io/node:lts-slim
+LABEL org.opencontainers.image.authors="Tobias Gruetzmacher <tobias-docker@23.gs>"
+
+COPY package* /opt/allure/
+
+RUN cd /opt/allure && npm ci
+
+WORKDIR /work
+ENTRYPOINT ["/opt/allure/node_modules/.bin/allure"]
