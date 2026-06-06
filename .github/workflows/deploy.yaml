@@ -42,7 +42,7 @@ jobs:
           images: ${{ env.IMAGE_NAME }}
           tags: |
             type=raw,value=${{ matrix.major }}
-            type=raw,value=latest,enabled=${{ steps.env.outputs.latest }}
+            type=raw,value=latest,enable=${{ steps.env.outputs.latest }}
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v4
